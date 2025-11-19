@@ -18,14 +18,14 @@ const Header: React.FC = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm py-4'
-          : 'bg-white/10 backdrop-blur-sm py-6'
+        ? 'bg-white/95 backdrop-blur-md shadow-sm py-4'
+        : 'bg-white/10 backdrop-blur-sm py-6'
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <a href="#" className={`font-serif text-2xl font-bold tracking-tight ${isScrolled ? 'text-brand-900' : 'text-brand-900'}`}>
+          <a href="#" className={`font-serif text-2xl font-bold tracking-tight ${isScrolled ? 'text-brand-900' : 'text-white'}`}>
             Castaway Frames
           </a>
         </div>
@@ -36,7 +36,7 @@ const Header: React.FC = () => {
             <a
               key={item}
               href={`#${item.toLowerCase().replace(' ', '-')}`}
-              className={`text-sm font-medium hover:text-brand-600 transition-colors ${isScrolled ? 'text-gray-800' : 'text-gray-900'}`}
+              className={`text-sm font-medium hover:text-brand-300 transition-colors ${isScrolled ? 'text-gray-800' : 'text-white'}`}
             >
               {item}
             </a>
@@ -45,12 +45,12 @@ const Header: React.FC = () => {
 
         {/* Actions */}
         <div className="flex items-center space-x-4">
-          <button className={`p-2 rounded-full hover:bg-brand-50 transition-colors ${isScrolled ? 'text-gray-800' : 'text-gray-900'}`}>
+          <button className={`p-2 rounded-full hover:bg-white/20 transition-colors ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
             <Search size={20} />
           </button>
           <button
             onClick={() => setIsCartOpen(true)}
-            className={`relative p-2 rounded-full hover:bg-brand-50 transition-colors ${isScrolled ? 'text-gray-800' : 'text-gray-900'}`}>
+            className={`relative p-2 rounded-full hover:bg-white/20 transition-colors ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
             <ShoppingBag size={20} />
             {cartCount > 0 && (
               <span className="absolute top-0 right-0 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-white transform translate-x-1/4 -translate-y-1/4 bg-brand-600 rounded-full">
